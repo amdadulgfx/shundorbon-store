@@ -9,6 +9,7 @@ const loadProducts = () => {
 // show all product in UI 
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
+
   for (const product of allProducts) {
     const image = product.image;
     const div = document.createElement("div");
@@ -17,7 +18,7 @@ const showProducts = (products) => {
       <div>
     <img class="product-image" src=${image}></img>
       </div>
-      <h3>${product.title.slice(0, 60)}</h3>
+      <h3>${product.title.slice(0, 30)}${product.title.length > 30 ? '...' : ''}</h3>
       <p>Category: ${product.category}</p>
       <h5> ${product.rating.rate} out of 5 </h5>
       <h5> ${product.rating.count} product ratings </h5>
